@@ -1,0 +1,10 @@
+::ng-deep .snackbar-1 {
+    --mdc-snackbar-container-color: white;
+    --mdc-snackbar-supporting-text-color: #617458;
+}
+::ng-deep .snackbar-1 button {
+    border: none;
+    background-color: white;
+    --mat-mdc-snack-bar-button-color: #fff;
+}
+  

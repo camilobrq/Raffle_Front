@@ -1,0 +1,20 @@
+<div class="wrapper-component" style="padding: 10px;">
+    <div class="buscador buscador-ajustado">
+        <input type="text" [(ngModel)]="query" placeholder="Search" (keyup.enter)="search()">     
+        <button (click)="search()">Search</button>
+    </div>
+    <div class="form-container">
+        <div class="container-position">
+            <div class="card-container">
+                <div class="card" *ngFor="let service of services" [ngClass]="getColorClass(service.state)">
+                    <div class="card-body">
+                        <h3 class="card-taskTitle"><strong>Service Title</strong> <br> {{ service.name }}</h3>
+                        <p class="card-description"><strong>Description</strong> <br>{{ service.description }}</p>
+                        <p class="card-state"><strong>price</strong> <br>{{ service.price }}</p>
+                        <p class="card-priority"><strong>state</strong> <br>{{ service.state }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

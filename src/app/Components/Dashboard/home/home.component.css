@@ -1,0 +1,70 @@
+.grid-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .dashboard-card-content {
+    text-align: center;
+  }
+  .card {
+    background-color: #1b2d10;
+    color: white;
+    margin: 20px;
+    width: max-content;
+    border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+    &:hover{
+      background-color: #2f501c;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+  .caja-icon {
+    padding: 5px;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .card-content-notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-content-notification-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .card-white {
+    margin: 20px;
+    border-radius: 20px;
+  }
+  .chart-container {
+    min-width: 100px;
+    width: 500px;
+  }
+  .center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

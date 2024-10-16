@@ -1,0 +1,122 @@
+.options-buttons {
+  margin-left: 87%;
+  background-color: green;
+  color: white;
+  width: 125px;
+}
+
+.component-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 500;
+    display: inline-block;
+  }
+}
+
+.component-wrapper {
+  padding: 2.5rem;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: .4rem;
+  position: relative;
+}
+
+.options-buttons {
+  margin-top: 2em;
+}
+
+.create-button {
+  background: #14ae5c;
+  color: white;
+  transition: bacground-color .1s ease-in-out;
+
+  &:disabled {
+    background: #dfdfdf;
+    color: #424242;
+  }
+}
+
+
+.list-data {
+  margin-top: 2em;
+  text-align: center;
+  overflow: auto;
+}
+
+
+.table-data {
+  width: 100%;
+}
+
+.paginator {
+  margin-top: 2em;
+}
+
+
+.edit-button {
+  color: dodgerblue;
+}
+
+.delete-button {
+  color: red;
+}
+
+.loader-spinner-wrapper {
+  margin: 1em 0;
+  padding: 1em;
+  background: #e7fef2;
+  display: inline-block;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #cbecdb;
+
+  .loader-spinner {
+    display: inline-block;
+    vertical-align: middle;
+
+    ::ng-deep .mdc-circular-progress__indeterminate-container circle {
+      stroke: #14ae5c !important;
+    }
+  }
+
+  span {
+    vertical-align: middle;
+    margin-left: 1.5em;
+    color: #14ae5c;
+    font-weight: 500;
+  }
+}
+
+::ng-deep {
+  table.table-data {
+    thead {
+      background-color: #f3f2f7;
+
+      th {
+        color: #6e6b7b;
+        font-weight: 700;
+      }
+    }
+
+    th,
+    td {
+      font-family: Montserrat, Helvetica, Arial, serif;
+    }
+
+  }
+}
+
+
+.imagen-estandar {
+  max-width: 100px;
+  /* Ajusta el ancho máximo según tus necesidades */
+  max-height: 100px;
+  /* Ajusta la altura máxima según tus necesidades */
+  width: auto;
+  height: auto;
+}

@@ -1,0 +1,160 @@
+.wrapper-component {
+    position: relative;
+    background-image: url("/assets/images/task-list-template.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-position: top left;
+    background-attachment: fixed;
+  }
+  
+  .form-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .container-position {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  mat-card-title {
+    text-align: center;
+    color: #46a51b;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+  
+  }
+  
+  .card-login {
+    display: flex;
+    justify-content: center;
+  }
+  
+  mat-card {
+    border-radius: 10px;
+    padding: 35px 40px;
+    box-shadow: 20px 20px 30px -10px rgb(0 0 0);
+  }
+  
+  mat-error {
+    display: inline-block;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 1.2em;
+    min-height: 1.5em;
+    margin-bottom: 0.3em;
+    box-sizing: border-box;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    min-width: 600px;
+  }
+  
+  .cancel {
+    padding-left: 50%;
+  }
+  
+  .account-labels {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .register {
+    margin-left: 35px;
+  }
+  
+  
+  .form-group {
+    display: block;
+    width: 100%;
+  
+    input, mat-select {
+      display: block;
+      margin-top: 0.2rem;
+      width: 100%;
+      outline: 0;
+      border-radius: 5px;
+      padding: 0.7rem;
+      font-size: 14px;
+      box-sizing: border-box;
+      border: 1px solid #f1f1f1;
+      background-color: #f6f6f6;
+      color: #000;
+      transition: .3s ease;
+      height: 40px;
+  
+      &:hover {
+        background-color: #eeeeee;
+      }
+    }
+  
+    mat-select {
+      padding: 0.45rem;
+    }
+  }
+  
+  .button-container {
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5em;
+  }
+  
+  .button-form {
+    width: 100%;
+    color: white !important;
+    background-color: #46a51b;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  .button-form[disabled] {
+    background: #e0e0e0;
+  }
+  
+  .account-link {
+    border: 0;
+    color: #0056ff;
+    border-radius: 5px;
+    padding: 0.3rem;
+    background: none;
+    text-decoration: none;
+  }
+  
+  .account-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  mat-error.hidden {
+    visibility: hidden;
+  }
+  
+  mat-error {
+    display: block;
+  }
+  

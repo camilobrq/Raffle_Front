@@ -1,0 +1,52 @@
+<div class="wrapper-component">
+    <app-toolbar></app-toolbar>
+    <div class="form-container">
+      <div class="container-position">
+        <div class="card-login">
+          <mat-card>
+            <mat-card-title class="titleIni">Sing In
+            </mat-card-title>
+            <mat-card-content>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <mat-label>Email</mat-label>
+                  <input
+                    type="email"
+                    name="email"
+                    matInput
+                    placeholder="Enter your email"
+                    class="email"
+                    formControlName="username" />
+                  <!-- <mat-error [class.hidden]="!hasError(controls['username'])">{{getError(controls['username'])}}</mat-error> -->
+                </div>
+                <div class="form-group">
+                  <mat-label>Password</mat-label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    class="email"
+                    formControlName="password" />
+                  <!-- <mat-error [class.hidden]="!hasError(controls['password'])">{{getError(controls['password'])}}</mat-error> -->
+                </div>
+                <div>
+                  <br />
+                  <span class="account-labels">¿You do not have an account? <a class="account-link" routerLink="/Register">Register</a></span>
+                </div>
+                <div class="button-container">
+                  <mat-spinner *ngIf="processing; else button" class="spin" diameter="35" spinnerColor="#46a51b" mode="indeterminate"></mat-spinner>
+                  <ng-template #button>
+                    <button class="button-form" type="submit" mat-button [disabled]="loginForm.invalid">
+                        Sign In
+                    </button>
+                  </ng-template>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  

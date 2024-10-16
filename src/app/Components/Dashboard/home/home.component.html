@@ -1,0 +1,67 @@
+<div class="grid-container">
+    <h1 class="mat-h1">Inicio</h1>
+
+    <mat-card role="button" class="card" (click)="navigate()">
+        <mat-card-content style="display: inline-block;">
+            <div class="card-content-notification">
+                <div class="caja-icon" style="background-color: #617458;">
+                    <mat-icon matBadge="1" matBadgeColor="warn">home</mat-icon>
+                </div>
+                <h2 style="margin: 0px; padding: 5px;">Available Service ?</h2>
+                <div class="caja-icon">
+                    <mat-icon matBadgeColor="warn">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-white">
+        <mat-card-header>
+            <div class="card-content-notification-space">
+                <h2 style="margin: 0px; padding: 5px;">Impact Service</h2>
+                <mat-form-field>
+                    <mat-label>Month</mat-label>
+                    <mat-select [(ngModel)]="selectedValue" name="food">
+                        <mat-option *ngFor="let month of months" [value]="month.value">
+                            {{month.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="center-content">
+                <div class="chart-container">
+                    <canvas id="Chart-impact"></canvas>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+                <mat-icon>download</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="card-white">
+        <mat-card-header>
+            <div class="card-content-notification-space">
+                <h2 style="margin: 0px; padding: 5px;">Service priority</h2>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="center-content">
+                <div class="chart-container">
+                    <canvas id="Chart-type"></canvas>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+                <mat-icon>download</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+
+</div>

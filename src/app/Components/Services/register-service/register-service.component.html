@@ -1,0 +1,52 @@
+<!-- edit-modal.component.html -->
+<div class="modal" [ngClass]="{'d-block': isVisible}" (click)="onClose.emit()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="form-container">
+      <div class="container-position">
+        <div class="card-register">
+          <mat-card>
+            <mat-card-title>Register service</mat-card-title>
+            <mat-card-content>
+              <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+                <div class="form-controls">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Service Name</mat-label>
+                    <input type="text" matInput placeholder="Enter the name of the task" formControlName="name" />
+                  </mat-form-field>
+                </div>
+                <div class="form-controls">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea type="text" matInput placeholder="Enter your description"
+                      formControlName="description"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="form-controls">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <textarea type="text" matInput placeholder="Enter your price"
+                      formControlName="price"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="button-container">
+                  <mat-spinner *ngIf="processing; else button" class="spin" diameter="35" spinnerColor="#46a51b"
+                    mode="indeterminate"></mat-spinner>
+                  <ng-template #button>
+                    <button [disabled]="eventForm.invalid" class="button-form" type="submit" mat-button>
+                      Register
+                    </button>
+                  </ng-template>
+                </div>
+                <div class="button-container">
+                  <button class="button-formC" (click)="onClose.emit()" type="button" mat-button>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

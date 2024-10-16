@@ -1,0 +1,20 @@
+<div class="wrapper-component" style="padding: 10px;">
+    <div class="buscador buscador-ajustado">
+        <input type="text" [(ngModel)]="query" placeholder="Search" (keyup.enter)="search()">     
+        <button (click)="search()">Search</button>
+    </div>
+    <div class="form-container">
+        <div class="container-position">
+            <div class="card-container">
+                <div class="card" *ngFor="let product of poducts" [ngClass]="getColorClass(product.state)">
+                    <div class="card-body">
+                        <h3 class="card-taskTitle"><strong>Product Title</strong> <br> {{ product.name }}</h3>
+                        <p class="card-description"><strong>Description</strong> <br>{{ product.description }}</p>
+                        <p class="card-state"><strong>price</strong> <br>{{ product.price }}</p>
+                        <p class="card-priority"><strong>state</strong> <br>{{ product.state }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
