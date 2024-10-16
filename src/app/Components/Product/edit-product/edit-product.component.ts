@@ -30,10 +30,10 @@ export class EditProductComponent {
   ngOnInit(): void {
     this.role = this.userAuth?.user?.userInfo?.role ?? 'CLIENT';
     this.eventForm = this.formBuilder.group({
-      name: [this.data?.taskTitle, Validators.required],
+      name: [this.data?.name, Validators.required],
       description: [this.data?.description, Validators.required],
-      price: [this.data?.state, Validators.required],
-      state: [this.data?.priority, Validators.required],
+      price: [this.data?.price, Validators.required],
+      state: [this.data?.state, Validators.required],
     });
     this.getUserList();
   }
@@ -65,7 +65,7 @@ export class EditProductComponent {
       this.eventForm.value.idUser = this.selectedUserId;
     }
     
-    this.eventForm.value.idTask = this.data?.idTask;
+    this.eventForm.value.id = this.data?.id;
     if (this.eventForm.valid) {
       this.processing = true;
       this.productService.UpdateProduct(this.eventForm.value).subscribe({

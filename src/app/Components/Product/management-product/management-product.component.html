@@ -3,7 +3,7 @@
       <div>
         <div class="button-container">
           <div class="options-buttons">
-            <button class="create-button" style="color: white;background-color: forestgreen;" mat-raised-button (click)="registrarTask()">
+            <button class="create-button" style="color: white;background-color: forestgreen;" mat-raised-button (click)="registrarProduct()">
               <mat-icon>add</mat-icon>
               Add Product</button>
           </div>
@@ -39,10 +39,10 @@
               <td mat-cell *matCellDef="let element">
                 <div class="actions-buttons">
                   
-                  <button mat-icon-button matTooltip="Edit" matTooltipPosition="after" class="edit-button" (click)="editTask(element)">
+                  <button mat-icon-button matTooltip="Edit" matTooltipPosition="after" class="edit-button" (click)="editProduct(element)">
                     <mat-icon>edit</mat-icon>
                   </button>
-                  <button mat-icon-button matTooltip="Delete" (click)="deleteTask(element.id)" matTooltipPosition="after" class="delete-button">
+                  <button mat-icon-button matTooltip="Delete" (click)="deleteProduct(element.id)" matTooltipPosition="after" class="delete-button">
                     <mat-icon>delete</mat-icon>
                   </button>
                 </div>

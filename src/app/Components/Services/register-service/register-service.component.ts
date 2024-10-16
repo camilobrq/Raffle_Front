@@ -24,10 +24,10 @@ export class RegisterServiceComponent {
   selectedUserId:string="";
   constructor(private formBuilder: FormBuilder, private router: Router, private serviceService: ServiceService, private snaback: SnackBar, private userAuth: AuthService, private user:userService ) {
     this.eventForm = this.formBuilder.group({
-      taskTitle: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       state: [],
-      priority: [],
+      price: [],
       idUser: []
     })
   }
@@ -67,8 +67,8 @@ export class RegisterServiceComponent {
       this.serviceService.AddService(this.eventForm.value).subscribe({
         next: (res) => {
           if (res.message === ResponseStatus.Successful) {
-            this.snaback.showSuccess("Task registered successfully.");
-            this.router.navigate(['ManagementTask'])
+            this.snaback.showSuccess("Service registered successfully.");
+            this.router.navigate(['ManagementService'])
             this.onClose.emit();
             location.reload();
           } else {

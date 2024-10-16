@@ -8,7 +8,7 @@
             <div class="card-container">
                 <div class="card" *ngFor="let service of services" [ngClass]="getColorClass(service.state)">
                     <div class="card-body">
-                        <h3 class="card-taskTitle"><strong>Service Title</strong> <br> {{ service.name }}</h3>
+                        <h3 class="card-name"><strong>Service Title</strong> <br> {{ service.name }}</h3>
                         <p class="card-description"><strong>Description</strong> <br>{{ service.description }}</p>
                         <p class="card-state"><strong>price</strong> <br>{{ service.price }}</p>
                         <p class="card-priority"><strong>state</strong> <br>{{ service.state }}</p>

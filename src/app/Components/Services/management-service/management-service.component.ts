@@ -21,12 +21,12 @@ export class ManagementServiceComponent {
   processing: boolean = false;
   dataSource = new MatTableDataSource<ServiceModel>();
   pageSizeOptions: number[] = [15, 30];
-  displayedColumns: string[] = ['taskTitle', 'description', 'state', 'priority', 'actions'];
+  displayedColumns: string[] = ['name', 'description', 'state', 'priority', 'actions'];
   showModal: boolean = false;
   showModalRegistro: boolean = false;
   role: string = "";
   userId: string = "";
-  @ViewChild(EditServiceComponent) editTaskComponent!: EditServiceComponent;
+  @ViewChild(EditServiceComponent) editServiceComponent!: EditServiceComponent;
 
   @ViewChild(MatPaginator) set setPaginator(paginator: MatPaginator) {
     this.dataSource.paginator = paginator;
@@ -53,13 +53,13 @@ export class ManagementServiceComponent {
       }
     })
   }
-  deleteTask(event: string) {
+  deleteService(event: string) {
     var request =new requestServiceModel();
     request.id=event;
     this.serviceService.DeleteService(request).subscribe({
       next: ({ message }) => {
         if (message === ResponseStatus.Successful) {
-          this.snaback.showSuccess("Task deleted successfully"!);
+          this.snaback.showSuccess("Service deleted successfully"!);
           this.getDataService();
         } else {
           this.snaback.showError(message);
@@ -70,7 +70,7 @@ export class ManagementServiceComponent {
   }
 
 
-  editTask(element: any): void {
+  editService(element: any): void {
     this.rowData = {
       id: element.id,
       name: element.name,
@@ -81,7 +81,7 @@ export class ManagementServiceComponent {
     this.showModal = true;
 
   }
-  registrarTask() {
+  registrarService() {
     this.showModalRegistro = true;
   }
 }

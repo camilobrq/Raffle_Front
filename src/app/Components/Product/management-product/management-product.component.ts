@@ -21,12 +21,12 @@ export class ManagementProductComponent {
   processing: boolean = false;
   dataSource = new MatTableDataSource<ServiceModel>();
   pageSizeOptions: number[] = [15, 30];
-  displayedColumns: string[] = ['taskTitle', 'description', 'state', 'priority', 'actions'];
+  displayedColumns: string[] = ['name', 'description', 'state', 'priority', 'actions'];
   showModal: boolean = false;
   showModalRegistro: boolean = false;
   role: string = "";
   userId: string = "";
-  @ViewChild(EditProductComponent) editTaskComponent!: EditProductComponent;
+  @ViewChild(EditProductComponent) editProductComponent!: EditProductComponent;
 
   @ViewChild(MatPaginator) set setPaginator(paginator: MatPaginator) {
     this.dataSource.paginator = paginator;
@@ -53,7 +53,7 @@ export class ManagementProductComponent {
       }
     })
   }
-  deleteTask(event: string) {
+  deleteProduct(event: string) {
     var request =new requestServiceModel();
     request.id=event;
     this.productService.DeleteProduct(request).subscribe({
@@ -70,7 +70,7 @@ export class ManagementProductComponent {
   }
 
 
-  editTask(element: any): void {
+  editProduct(element: any): void {
     this.rowData = {
       id: element.id,
       name: element.name,
@@ -81,7 +81,7 @@ export class ManagementProductComponent {
     this.showModal = true;
 
   }
-  registrarTask() {
+  registrarProduct() {
     this.showModalRegistro = true;
   }
 }

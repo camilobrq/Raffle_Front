@@ -25,9 +25,9 @@ export class SearchServiceComponent {
 
   ngOnInit(): void {
     this.role = this.user?.user?.userInfo?.role ?? 'CLIENT';
-    this.getDataTask();
+    this.getDataService();
   }
-  getDataTask() {
+  getDataService() {
     const userId = this.user?.user?.userInfo?.userId;
     var request= new requestServiceModel();
     request.idUser='B51D2FA3-D2B1-4AB7-B336-9499EE34DA81';
@@ -45,7 +45,7 @@ export class SearchServiceComponent {
   search() {
     this.services = [];
     this.dataSource.data.forEach(element => {
-      if (element.taskTitle.includes(this.query)) {
+      if (element.name.includes(this.query)) {
         this.services.push(element);
       }
     });
